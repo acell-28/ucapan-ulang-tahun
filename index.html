@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff5733;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            margin-top: 30px;
+            display: none; /* Video tersembunyi pada awalnya */
+        }
+
+        video {
+            width: 40%; /* Mengatur ukuran video menjadi 60% dari lebar layar */
+            height: auto; /* Menjaga rasio aspek video */
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff2e00;
+        }
+
+        .celebration-animation {
+            font-size: 2em;
+            color: #ff5733;
+            margin-top: 30px;
+            display: none;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .top-button, .bottom-button {
+            padding: 15px 30px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .top-button:hover, .bottom-button:hover {
+            background-color: #ff2e00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Ucapan Selamat -->
+        <h1>Selamat Ulang Tahun!</h1>
+
+        <!-- Tombol untuk melihat video -->
+        <div class="button-container">
+            <button class="top-button" onclick="tampilkanUcapan()">Klik untuk Melihat Ucapan Khusus</button>
+            <button class="bottom-button" id="showVideoButton" onclick="tampilkanVideo()">Tampilkan Video</button>
+        </div>
+
+        <!-- Ucapan Khusus -->
+        <div class="celebration-animation" id="celebration">
+            🎉🎉🎉 <br>
+            <strong>Ucapan Khusus:</strong><br><br>
+            Panjang umur, sehat selalu! Semoga kamu jadi anak yang selalu berbakti kepada orang tua,  
+            menjadi anak yang takut akan Tuhan, dan selalu mendapat berkah dalam hidupmu.<br><br>
+            Jangan lupa selalu dengar dan patuhi nasihat mama dan papa. Semoga hidupmu penuh dengan kebahagiaan!<br><br>
+            🎂🎈
+        </div>
+
+        <!-- Video -->
+        <div class="video-container" id="videoContainer">
+            <h2>Tonton Video Ucapan!</h2>
+            <!-- Video lokal -->
+            <video controls>
+                <source src="ulang_tahun.mp4" type="video/mp4">
+                Video tidak didukung oleh browser Anda.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function tampilkanUcapan() {
+            const ucapan = document.getElementById('celebration');
+            const tombolUcapan = document.querySelector('.top-button');
+            ucapan.style.display = 'block';  // Tampilkan ucapan khusus
+            tombolUcapan.style.display = 'none';  // Sembunyikan tombol setelah diklik
+        }
+
+        function tampilkanVideo() {
+            const videoContainer = document.getElementById('videoContainer');
+            const showVideoButton = document.getElementById('showVideoButton');
+            videoContainer.style.display = 'block';
+            showVideoButton.style.display = 'none';  // Sembunyikan tombol setelah video ditampilkan
+        }
+    </script>
+
+</body>
+</html>
